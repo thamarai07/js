@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="itemList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+    </ul>
+  </body>
+  <script>
+   
+
+    const list = document.querySelectorAll("#itemList li");
+
+    list.forEach((values) => {
+      values.addEventListener("click", function (valu) {
+        list.forEach((valuess) => valuess.classList.remove("highlight"));
+        values.classList.add("highlight");
+
+        let nextnode = values.nextElementSibling;
+        if (nextnode) {
+          nextnode.classList.add("highlight");
+        }
+      });
+    });
+  </script>
+</html>
